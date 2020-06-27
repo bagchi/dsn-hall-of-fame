@@ -4,8 +4,10 @@ from collections import namedtuple
 
 DBLP_BASE_URL = 'http://dblp.uni-trier.de/'
 DBLP_AUTHOR_SEARCH_URL = DBLP_BASE_URL + 'search/author'
+DBLP_PUBL_SEARCH_URL = DBLP_BASE_URL + 'search/publ/api'
 
 DBLP_PERSON_URL = DBLP_BASE_URL + 'pers/xk/{urlpt}'
+DBLP_PERSON_URL2 = DBLP_BASE_URL + 'pers/xx/{urlpt}'
 # per DBLP staff, rec/conf/... instead of rec/bibtex/conf/... is the "new" format
 DBLP_PUBLICATION_URL = DBLP_BASE_URL + 'rec/{key}.xml'
 
@@ -47,14 +49,12 @@ class Author(LazyAPIData):
         while (passFail == 0):
             try:
                 resp = requests.get(DBLP_PERSON_URL.format(urlpt=self.urlpt))
-
                 # TODO error handling
                 xml = resp.content
-                self.xml = xml
                 root = etree.fromstring(xml)
                 data = {
                     'name':root.attrib['name'],
-                    'publications':[Publication(k) for k in 
+                    'publications':[Publication(k) for k in
                                     root.xpath('/dblpperson/dblpkey[not(@type)]/text()')],
                     'homepages':root.xpath(
                         '/dblpperson/dblpkey[@type="person record"]/text()'),
@@ -171,6 +171,24 @@ class Publication(LazyAPIData):
                     print("ERROR: failed to connect to DBLP 5+ times for"+str(self.key)+", skipping")
                     passFail2 = 1
 
+def search_pub(pub_str):
+    timeOutCount3 = 0
+    passFail3 = 0
+    while (passFail3 == 0):
+        try:
+            resp = requests.get(DBLP_PUBL_SEARCH_URL, params={'q':pub_str, 'format': 'json', 'h': 1000})
+            passFail3 = 1
+        # if connection times out, try again until it works or failed 5 times
+        except:
+            if (timeoutCount3 < 5):
+                passFail3 = 0
+                timeoutCount3 = timeoutCount3 + 1
+            else:
+                print("ERROR: failed to connect to DBLP 5+ times for"+str(pub_str)+", skipping")
+                passFail3 = 1
+
+    return resp.text
+
 def search(author_str):
     timeoutCount3 = 0
     passFail3 = 0
@@ -187,8 +205,8 @@ def search(author_str):
                 print("ERROR: failed to connect to DBLP 5+ times for"+str(author_str)+", skipping")
                 passFail3 = 1
 
-    # TODO: Does this need to be a nested try-catch above with the resp?
-    #TODO error handling
+    #TODO: Does this need to be a nested try-catch above with the resp?
+    #TODO: error handling
     root = etree.fromstring(resp.content)
     arr_of_authors = []
     for urlpt in root.xpath('/authors/author/@urlpt'):
@@ -218,3 +236,57 @@ def search(author_str):
                     passFail4 = 1
 
     return arr_of_authors
+
+def get_affiliation(pid, author_str):
+    timeoutCount3 = 0
+    passFail3 = 0
+    while (passFail3 == 0):
+        try:
+            resp = requests.get(DBLP_AUTHOR_SEARCH_URL, params={'xauthor':author_str})
+            passFail3 = 1
+        # if connection times out, try again until it works or failed 5 times
+        except:
+            if (timeoutCount3 < 5):
+                passFail3 = 0
+                timeoutCount3 = timeoutCount3 + 1
+            else:
+                print("ERROR: failed to connect to DBLP 5+ times for"+str(author_str)+", skipping")
+                passFail3 = 1
+
+    affiliation = None
+    root = etree.fromstring(resp.content)
+    for urlpt in root.xpath('/authors/author/@urlpt'):
+        timeoutCount4 = 0
+        passFail4 = 0
+        while (passFail4 == 0):
+            try:
+                resp = requests.get(DBLP_PERSON_URL2.format(urlpt=urlpt))
+                if resp.status_code != 404:
+                    # print(resp.text)
+                    root2=etree.fromstring(resp.text)
+                    xx = root2.attrib['pid']
+                    if xx == pid:
+                        affiliation = first_or_none(root2.xpath('/dblpperson/person/note[@type="affiliation"]/text()'))
+
+                passFail4 = 1
+
+            # if connection times out or string is empty, try again until it works or failed 5 times
+            except:
+                if (timeoutCount4 < 5):
+                    passFail4 = 0
+                    timeoutCount4 = timeoutCount4 + 1
+                else:
+                    print("ERROR: failed to connect to DBLP 5+ times for" + str(urlpt) + ", skipping")
+                    passFail4 = 1
+
+    return "" if affiliation is None else affiliation
+    #
+    #
+    # affiliation = None
+    # resp = requests.get(DBLP_PERSON_URL2.format(urlpt=pid))
+    # if resp.status_code != 404:
+    #     # print(resp.text)
+    #     root = etree.fromstring(resp.text)
+    #     affiliation = first_or_none(root.xpath('/dblpperson/person/note[@type="affiliation"]/text()'))
+    #
+    # return "" if affiliation is None else affiliation
