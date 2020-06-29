@@ -26,6 +26,9 @@ pip-log.txt
 .tox
 nosetests.xml
 
+# Temporary Files
+.output
+
 # Translations
 *.mo
 
@@ -33,3 +36,6 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# IDEA
+.idea
