@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<title>DSN Hall of Fame</title>	
+	<title>DSN Hall of Fame</title>
 	<style>
 		table {
 			border: 0pt solid black;
 			cellpadding: 0;
 		}
 		table td, table th {
-			border: 0px solid black;
+			border: 1px solid black;
 		}
 		.numerl {
 			text-align: left;
 		}
-		.numero {
+		.numer2 {
 			text-align: right;
+		}
+		.numer3 {
+			text-align: center;
 		}
 	</style>
 	</head>
 	<body>
-	  <H2> DSN Hall of Fame </H2>
-	  <H3> This is a ranking by the number of papers published by authors in DSN and its predecessor conference FTCS. The data is obtained from DBLP. The records go only as far back as 1988, though the conference started in 1971. The recency count is for papers published in the last five years. </H3>
+	  <H3> This is a ranking by the number of papers published by authors in DSN and its predecessor conference FTCS. The data is obtained from DBLP. The records go only as far back as 1988, though the conference started in 1971. The recency count is for papers published in the last three years. </H3>
 
 	  Source code, written by Edgardo and Saurabh, available at: https://github.com/ebarsallo/dblp-python, derived from the scholrly's dblp-python code. <p> Fine-print: (1) Count does not equal impact. (2) Only regular papers are counted, not workshop, industry track, short papers, etc. (3) Affiliation information comes from DBLP.
 
 		<table id="rank">
 			<tr>
-				<th>Author</th>
-				<th># Rank</th>
-				<th>Name</th>
-				<th># Papers</th>
-				<th># Papers Since 2014</th>
-				<th></th>
-<!--				<td></td> -->
-				<th>Last-Known Affiliation</th>
+				<td><b>Author</b></td>
+				<td><b># Rank</b></td>
+				<td><b>Name</b></td>
+				<td><b>Num. of Papers</b></td>
+				<td><b>Num. of Papers Since 2014</b></td>
+				<td><b>Last-Known Affiliation</b></td>
 			</tr>
 		</table>
 
 			<ul id="ranking"></ul>
-		
+
 		<script type="text/javascript" src=load.js></script>
 	</body>
 </html>
