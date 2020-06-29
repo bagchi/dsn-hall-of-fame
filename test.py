@@ -130,8 +130,9 @@ def usage():
             dir = OUTPUT_DIR[2:]
         else:
             dir = OUTPUT_DIR
-        print("'{}' does not exists. Please create the directory.".format(dir))
-        return False
+        os.makedirs(dir)
+        # print("'{}' does not exist. Please create the directory.".format(dir))
+        # return False
 
     return True
 
@@ -156,10 +157,6 @@ def main():
     # DSN (2000-2019)
     for year in range(2000,2020):
         print("Processing year {}: {}".format(year, get_authors("conf/dsn/{}".format(year))))
-
-    # get_authors("conf/ftcs/{}".format(1999))
-    # get_authors("conf/ftcs/{}".format(1998))
-    # get_authors("conf/ftcs/{}".format(1998))
 
     for pid in authorList:
         author = authorList[pid]
