@@ -35,8 +35,8 @@ loadJSON(function(response) {
         c5.innerText = data[i].affiliation
 
         // Style
-        c0.setAttribute("class", "numero");
-        c1.setAttribute("class", "numero");
+        c0.setAttribute("class", "numerl");
+        c1.setAttribute("class", "numerl");
         c3.setAttribute("class", "numero");
         c4.setAttribute("class", "numero");
 
