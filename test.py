@@ -1,13 +1,28 @@
+import os
 import dblp
 import json
 import time
 
-match = ['DSN', 'DSN Workshop', 'FTCS']
+## Constants
+OUTPUT_DIR = './output'               # Output directory
+MIN_PAGES = 3                         # Min pages for a paper
+MATCH = ['DSN', 'FTCS']               # Venues considered
+MATCH_DOI = ['DSN.{}', 'FTCS.{}']     # DOI considered (to filter out workshops)
+RECENT = 2014                         # Year for recent papers
+
+## Global Variables
 authorList = {}
-recent = 2014
 
 
 def get_recent_pubs(pubs):
+    """
+    Get the number of recent publications (using the `RECENT` constant as reference.
+    Args:
+        pubs: List of publications for the author.
+
+    Returns:
+        The number of publications that qualify as recent.
+    """
     cc = 0
     for key in pubs:
         # in case the year has a suffix (e.g., LeeL17a)
@@ -16,11 +31,21 @@ def get_recent_pubs(pubs):
         except:
             yyy = int(key[len(key) - 3:len(key) - 1])
         yyy = yyy + 1900 if yyy > 50 else yyy + 2000
-        if yyy >= recent:
+        if yyy >= RECENT:
             cc += 1
     return cc
 
 def update_authors(pid, name, key):
+    """
+    Update the author list (`authorList`)
+    Args:
+        pid: Identifier of the author.
+        name: Name of the author
+        key: Key of the publication
+
+    Returns:
+        None
+    """
     if pid in authorList:
         author = authorList[pid]
         author["pubs"].add(key)
@@ -33,14 +58,58 @@ def update_authors(pid, name, key):
         authorList[pid] = author
 
 
+def filter_papers(pub, venue):
+    """
+    Filter out papers from the count (e.g., Industrial Track, Workshop papers, etc)
+    Returns:
+        True if the paper should be considered. False otherwise.
+    """
+    year = int(venue[len(venue)-4:])
+    pags = 0
+
+    # Check number of pages. Discard keynotes or abstract
+    if 'pages' in pub:
+        if '-' not in pub['pages']:
+            pags = 1
+        else:
+            try:
+                pages = pub['pages'].split('-')
+                pags = int(pages[1]) - int(pages[0]) + 1
+            except:
+                # For some papers, pages does not include the finish page of the publication.
+                pags = 99
+    if pags < MIN_PAGES:
+        return False
+
+    # Filter out workshops, industry track, supplemental volume, etc
+    if pub["venue"] in MATCH:
+        # For some papers the doi is not available (e.g., https://dblp.uni-trier.de/rec/xml/conf/ftcs/HuangK93.xml)
+        for doi in MATCH_DOI:
+            try:
+                if doi.format(year) in pub["doi"]:
+                    return True
+            except:
+                return True
+
+    return False
+
 def get_authors(venue):
+    """
+    Save the author list (in `authorList`) who had accepted papers in the conference.
+    Args:
+        venue: venue to search. The venue follows this format /conf/XXX/YYYY, where XXX is the abbrev of the conf and
+        YYYY correspond to the year of the conf.
+
+    Returns:
+        The number of publications (main conference) for the venue
+    """
     papers=0
     results = dblp.search_pub(venue)
 
     hits = json.loads(results)["result"]["hits"]
     for i in hits["hit"]:
         info = i["info"]
-        if info["venue"] in match:
+        if  filter_papers(info, venue):
             papers+=1
             # print(info)
             if 'authors' in info:
@@ -53,8 +122,30 @@ def get_authors(venue):
 
     return papers
 
+def usage():
+    if not os.path.isdir(OUTPUT_DIR):
+        if OUTPUT_DIR[0:2] == './':
+            dir = OUTPUT_DIR[2:]
+        else:
+            dir = OUTPUT_DIR
+        print("'{}' does not exists. Please create the directory.".format(dir))
+        return False
+
+    return True
+
+
+
 def main():
-    outFile = open('./output/dsnHOF-' + time.strftime("%Y%m%d-%H%M%S"), mode='a', encoding='utf-8')
+    """
+    Main Function
+    Returns:
+
+    """
+
+    if not usage():
+        exit(1)
+
+    outFile = open(OUTPUT_DIR + '/dsnHOF-' + time.strftime("%Y%m%d-%H%M%S"), mode='a', encoding='utf-8')
 
     # FTCS (1988-1999)
     for year in range(1988,2000):
@@ -106,20 +197,5 @@ def main():
     with open('./ranking.json', mode='w', encoding='utf-8') as jsonFile:
         json.dump(data, jsonFile, indent=4)
 
-def test():
-    # person = "57/95, Saurabh Bagchi"
-    print (dblp.get_affiliation("57/95", "Saurabh Bagchi"))
-    #
-    # if (len(currAuthors) > 1):
-    #     print("    WARNING: " + person + " has multiple matches (" + str(len(currAuthors)) + ") in DBLP")
-    #
-    # for currAuthor in currAuthors:
-    #     homepages = str(currAuthor.homepages)
-    #     print("{} {} == {}".format(currAuthor.homepages, homepages[12:], person))
-    #     print(currAuthor.affiliation)
-    #     print(currAuthor.publications[0].school)
-
-
 if __name__ == '__main__':
     main()
-    # test()
