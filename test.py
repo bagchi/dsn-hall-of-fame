@@ -4,7 +4,7 @@ import json
 import time
 
 ## Constants
-OUTPUT_DIR = './output'               # Output directory
+OUTPUT_DIR = './output-new'               # Output directory
 MIN_PAGES = 3                         # Min pages for a paper
 MATCH = ['DSN', 'FTCS']               # Venues considered
 MATCH_DOI = ['DSN.{}', 'FTCS.{}']     # DOI considered (to filter out workshops)
@@ -131,8 +131,6 @@ def usage():
         else:
             dir = OUTPUT_DIR
         os.makedirs(dir)
-        # print("'{}' does not exist. Please create the directory.".format(dir))
-        # return False
 
     return True
 
