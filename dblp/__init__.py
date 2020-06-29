@@ -1,9 +1,11 @@
+import json
 import requests
 from lxml import etree
 from collections import namedtuple
 
 DBLP_BASE_URL = 'http://dblp.uni-trier.de/'
 DBLP_AUTHOR_SEARCH_URL = DBLP_BASE_URL + 'search/author'
+DBLP_AUTHOR_SEARCH_URL2 = DBLP_BASE_URL + 'search/author/api'
 DBLP_PUBL_SEARCH_URL = DBLP_BASE_URL + 'search/publ/api'
 
 DBLP_PERSON_URL = DBLP_BASE_URL + 'pers/xk/{urlpt}'
@@ -240,6 +242,59 @@ def search(author_str):
 def get_affiliation(pid, author_str):
     timeoutCount3 = 0
     passFail3 = 0
+    # find all alias for the author
+    while (passFail3 == 0):
+        try:
+            resp = requests.get(DBLP_AUTHOR_SEARCH_URL2, params={'q': author_str, 'format': 'json', 'h': 1000})
+            passFail3 = 1
+        # if connection times out, try again until it works or failed 5 times
+        except:
+            if (timeoutCount3 < 5):
+                passFail3 = 0
+                timeoutCount3 = timeoutCount3 + 1
+            else:
+                print("ERROR: failed to connect to DBLP 5+ times for" + str(author_str) + ", skipping")
+                passFail3 = 1
+
+    affiliation = None
+    hits = json.loads(resp.text)["result"]["hits"]
+    for hit in hits["hit"]:
+        if "info" in hit:
+            if "author" in hit["info"]:
+                if "aliases" in hit["info"]:
+                    for alias in hit["info"]["aliases"]["alias"]:
+                        # print(alias)
+                        pass
+
+                # find pid -- which is on the url
+                if "url" in hit["info"]:
+                    if "https://dblp.org/pid" in hit["info"]["url"]:
+                        xx = hit["info"]["url"][21:]
+                        # print(xx)
+
+                        if xx == pid:
+                            if "notes" in hit["info"]:
+                                note = hit["info"]["notes"]["note"]
+                                # if the author has multiple notes
+                                if isinstance(note, list):
+                                    for text in note:
+                                        if text["@type"] == "affiliation":
+                                            affiliation = text["text"]
+                                        # if there is more than one entry, we choose the first one
+                                        if affiliation is not None: break
+
+                                if "@type" in note:
+                                    if note["@type"] == "affiliation":
+                                        affiliation = note["text"]
+
+                if affiliation is not None:
+                    break
+
+    return "" if affiliation is None else affiliation
+
+def __get_affiliation(pid, author_str):
+    timeoutCount3 = 0
+    passFail3 = 0
     while (passFail3 == 0):
         try:
             resp = requests.get(DBLP_AUTHOR_SEARCH_URL, params={'xauthor':author_str})
@@ -258,6 +313,11 @@ def get_affiliation(pid, author_str):
     for urlpt in root.xpath('/authors/author/@urlpt'):
         timeoutCount4 = 0
         passFail4 = 0
+
+        # if we found an affiliation, break the cycle
+        if affiliation is not None:
+            break
+
         while (passFail4 == 0):
             try:
                 resp = requests.get(DBLP_PERSON_URL2.format(urlpt=urlpt))
