@@ -4,7 +4,7 @@ import json
 import time
 
 ## Constants
-OUTPUT_DIR = './output'               # Output directory
+OUTPUT_DIR = './output-new'               # Output directory
 MIN_PAGES = 3                         # Min pages for a paper
 MATCH = ['DSN', 'FTCS']               # Venues considered
 MATCH_DOI = ['DSN.{}', 'FTCS.{}']     # DOI considered (to filter out workshops)
@@ -126,12 +126,7 @@ def get_authors(venue):
 
 def usage():
     if not os.path.isdir(OUTPUT_DIR):
-        if OUTPUT_DIR[0:2] == './':
-            dir = OUTPUT_DIR[2:]
-        else:
-            dir = OUTPUT_DIR
-        print("'{}' does not exists. Please create the directory.".format(dir))
-        return False
+        os.makedirs(OUTPUT_DIR)
 
     return True
 
