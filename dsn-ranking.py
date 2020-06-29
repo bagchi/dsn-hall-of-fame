@@ -177,7 +177,7 @@ def main():
             break
 
         if last_total != value['total']: rank = i
-        print ('{} {} {} {} {} {}'.format(i, rank, value['name'], value['total'], value['recent'], dblp.get_affiliation(key, value['name'])))
+        print ('{}\t{}\t{}\t{}\t{}\t{}'.format(i, rank, value['name'], value['total'], value['recent'], dblp.get_affiliation(key, value['name'])))
         data.append({
             "anchor": "ranking",
             "num": i,
@@ -194,5 +194,16 @@ def main():
     with open('./ranking.json', mode='w', encoding='utf-8') as jsonFile:
         json.dump(data, jsonFile, indent=4)
 
+
+def test():
+    # xx = dblp.get_affiliation("i/RavishankarKIyer", "Ravishankar K. Iyer")
+    # xx = dblp.get_affiliation("k/PhilipKoopman", "Philip J. Koopman Jr.")
+    # xx = dblp.get_affiliation("50/842","Daniel P. Siewiorek")
+    # xx = dblp.get_affiliation("l/MichaelRLyu", "Michael R. Lyu")
+    xx = dblp.get_affiliation("k/JoostPieterKatoen", "Joost-Pieter Katoen")
+    print(xx)
+
+
 if __name__ == '__main__':
     main()
+    # test()
