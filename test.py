@@ -83,6 +83,8 @@ def filter_papers(pub, venue):
 
     # Filter out workshops, industry track, supplemental volume, etc
     if pub["venue"] in MATCH:
+        # Papers from main conference can be distinguished by the doi. For example, a paper from a workshop has a doi
+        # with DSN-W.YYYY, while the papers from the main conference has a doi with DSN.YYYY.
         # For some papers the doi is not available (e.g., https://dblp.uni-trier.de/rec/xml/conf/ftcs/HuangK93.xml)
         for doi in MATCH_DOI:
             try:
