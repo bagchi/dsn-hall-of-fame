@@ -2,7 +2,9 @@ DSN Hall of Fame Python scripts
 ================================
 This repo contains the scripts needed to run and calculate the number of publications for the DSN Hall of Fame. Currently, this script has only been tested with Python 3.5. To run this script:
 
-`python3.5 dsn-ranking.py`
+```
+python3.5 dsn-ranking.py
+```
 
 
 About this Version
