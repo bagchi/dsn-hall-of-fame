@@ -15,7 +15,7 @@ MATCH_DOI = [
     '10\.1109/ICDSN\.{}\.([0-9]+)',
     '10\.1109/DSN\.{}\.([0-9]+)',
     '10\.1109\/FTCS\.{}\.([0-9]+)']
-RECENT = 2014                         # Year for recent papers
+# RECENT = 2014                         # Year for recent papers
 RECENT_YEARS = 5                      # Number years span used to consider a publication as 'recent'
 
 ## Global Variables
