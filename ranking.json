@@ -4,8 +4,8 @@
         "num": 1,
         "rank": 1,
         "author": "Ravishankar K. Iyer",
-        "total": 50,
-        "recent": 7,
+        "total": 51,
+        "recent": 5,
         "affiliation": "University of Illinois at Urbana-Champaign, Center for Reliable &amp; High Performance Computing (CRHC), IL, USA"
     },
     {
@@ -20,10 +20,10 @@
     {
         "anchor": "ranking",
         "num": 3,
-        "rank": 3,
+        "rank": 2,
         "author": "Zbigniew Kalbarczyk",
-        "total": 32,
-        "recent": 7,
+        "total": 34,
+        "recent": 6,
         "affiliation": "University of Illinois at Urbana-Champaign, Coordinated Science Laboratory"
     },
     {
@@ -32,7 +32,7 @@
         "rank": 4,
         "author": "Kishor S. Trivedi",
         "total": 24,
-        "recent": 1,
+        "recent": 0,
         "affiliation": "Duke University, Durham, NC, USA"
     },
     {
@@ -47,9 +47,9 @@
     {
         "anchor": "ranking",
         "num": 6,
-        "rank": 6,
+        "rank": 5,
         "author": "Saurabh Bagchi",
-        "total": 19,
+        "total": 20,
         "recent": 4,
         "affiliation": "Purdue University, West Lafayette, USA"
     },
@@ -58,8 +58,8 @@
         "num": 7,
         "rank": 7,
         "author": "Christof Fetzer",
-        "total": 18,
-        "recent": 6,
+        "total": 19,
+        "recent": 5,
         "affiliation": "Dresden University of Technology, Germany"
     },
     {
@@ -75,15 +75,24 @@
         "anchor": "ranking",
         "num": 9,
         "rank": 8,
-        "author": "Philip J. Koopman Jr.",
+        "author": "Neeraj Suri",
         "total": 17,
         "recent": 1,
-        "affiliation": "Carnegie Mellon University, Pittsburgh, USA"
+        "affiliation": "Darmstadt University of Technology, Germany"
     },
     {
         "anchor": "ranking",
         "num": 10,
-        "rank": 10,
+        "rank": 8,
+        "author": "Philip J. Koopman Jr.",
+        "total": 17,
+        "recent": 0,
+        "affiliation": "Carnegie Mellon University, Pittsburgh, USA"
+    },
+    {
+        "anchor": "ranking",
+        "num": 11,
+        "rank": 11,
         "author": "Roy A. Maxion",
         "total": 16,
         "recent": 0,
@@ -91,17 +100,17 @@
     },
     {
         "anchor": "ranking",
-        "num": 11,
-        "rank": 10,
-        "author": "Neeraj Suri",
+        "num": 12,
+        "rank": 11,
+        "author": "Rachid Guerraoui",
         "total": 16,
-        "recent": 0,
-        "affiliation": "Darmstadt University of Technology, Germany"
+        "recent": 3,
+        "affiliation": "Swiss Federal Institute of Technology in Lausanne, Switzerland"
     },
     {
         "anchor": "ranking",
-        "num": 12,
-        "rank": 12,
+        "num": 13,
+        "rank": 13,
         "author": "Johan Karlsson",
         "total": 15,
         "recent": 1,
@@ -109,17 +118,17 @@
     },
     {
         "anchor": "ranking",
-        "num": 13,
-        "rank": 12,
-        "author": "Rachid Guerraoui",
+        "num": 14,
+        "rank": 13,
+        "author": "Karthik Pattabiraman",
         "total": 15,
-        "recent": 3,
-        "affiliation": "Swiss Federal Institute of Technology in Lausanne, Switzerland"
+        "recent": 5,
+        "affiliation": "University of British Columbia, Vancouver, Canada"
     },
     {
         "anchor": "ranking",
-        "num": 14,
-        "rank": 14,
+        "num": 15,
+        "rank": 15,
         "author": "Jean Arlat",
         "total": 14,
         "recent": 0,
@@ -127,8 +136,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 15,
-        "rank": 14,
+        "num": 16,
+        "rank": 15,
         "author": "Daniel P. Siewiorek",
         "total": 14,
         "recent": 0,
@@ -136,8 +145,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 16,
-        "rank": 14,
+        "num": 17,
+        "rank": 15,
         "author": "Kang G. Shin",
         "total": 14,
         "recent": 0,
@@ -145,26 +154,26 @@
     },
     {
         "anchor": "ranking",
-        "num": 17,
-        "rank": 14,
+        "num": 18,
+        "rank": 15,
         "author": "Marco Vieira",
         "total": 14,
-        "recent": 4,
+        "recent": 0,
         "affiliation": "University of Coimbra, Portugal"
     },
     {
         "anchor": "ranking",
-        "num": 18,
-        "rank": 14,
-        "author": "Karthik Pattabiraman",
+        "num": 19,
+        "rank": 15,
+        "author": "Fernando Pedone",
         "total": 14,
-        "recent": 8,
-        "affiliation": "University of British Columbia, Vancouver, Canada"
+        "recent": 5,
+        "affiliation": "University of Lugano, Switzerland"
     },
     {
         "anchor": "ranking",
-        "num": 19,
-        "rank": 19,
+        "num": 20,
+        "rank": 20,
         "author": "Paulo Ver\u00edssimo",
         "total": 13,
         "recent": 0,
@@ -172,8 +181,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 20,
-        "rank": 19,
+        "num": 21,
+        "rank": 20,
         "author": "Irith Pomeranz",
         "total": 13,
         "recent": 0,
@@ -181,8 +190,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 21,
-        "rank": 19,
+        "num": 22,
+        "rank": 20,
         "author": "Nuno Neves 0001",
         "total": 13,
         "recent": 5,
@@ -190,8 +199,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 22,
-        "rank": 22,
+        "num": 23,
+        "rank": 23,
         "author": "Arun K. Somani",
         "total": 12,
         "recent": 0,
@@ -199,21 +208,12 @@
     },
     {
         "anchor": "ranking",
-        "num": 23,
-        "rank": 22,
+        "num": 24,
+        "rank": 23,
         "author": "W. Kent Fuchs",
         "total": 12,
         "recent": 0,
         "affiliation": "Purdue University, West Lafayette, USA"
-    },
-    {
-        "anchor": "ranking",
-        "num": 24,
-        "rank": 22,
-        "author": "Fernando Pedone",
-        "total": 12,
-        "recent": 6,
-        "affiliation": "University of Lugano, Switzerland"
     },
     {
         "anchor": "ranking",
@@ -239,7 +239,7 @@
         "rank": 25,
         "author": "Gilles Muller",
         "total": 11,
-        "recent": 3,
+        "recent": 2,
         "affiliation": ""
     },
     {
@@ -276,7 +276,7 @@
         "author": "Tzi-cker Chiueh",
         "total": 11,
         "recent": 0,
-        "affiliation": "Stony Brook University, USA"
+        "affiliation": "Industrial Technology Research Institute, Hsinchu, Taiwan"
     },
     {
         "anchor": "ranking",
@@ -290,7 +290,16 @@
     {
         "anchor": "ranking",
         "num": 33,
-        "rank": 33,
+        "rank": 25,
+        "author": "Evgenia Smirni",
+        "total": 11,
+        "recent": 3,
+        "affiliation": ""
+    },
+    {
+        "anchor": "ranking",
+        "num": 34,
+        "rank": 34,
         "author": "Karama Kanoun",
         "total": 10,
         "recent": 0,
@@ -298,8 +307,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 34,
-        "rank": 33,
+        "num": 35,
+        "rank": 34,
         "author": "Michael R. Lyu",
         "total": 10,
         "recent": 4,
@@ -307,8 +316,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 35,
-        "rank": 33,
+        "num": 36,
+        "rank": 34,
         "author": "Prithviraj Banerjee",
         "total": 10,
         "recent": 0,
@@ -316,8 +325,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 36,
-        "rank": 33,
+        "num": 37,
+        "rank": 34,
         "author": "Bella Bose",
         "total": 10,
         "recent": 0,
@@ -325,8 +334,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 37,
-        "rank": 33,
+        "num": 38,
+        "rank": 34,
         "author": "Yair Amir",
         "total": 10,
         "recent": 2,
@@ -334,8 +343,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 38,
-        "rank": 33,
+        "num": 39,
+        "rank": 34,
         "author": "Yi-Min Wang",
         "total": 10,
         "recent": 0,
@@ -343,8 +352,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 39,
-        "rank": 33,
+        "num": 40,
+        "rank": 34,
         "author": "Andr\u00e9 Schiper",
         "total": 10,
         "recent": 0,
@@ -352,8 +361,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 40,
-        "rank": 33,
+        "num": 41,
+        "rank": 34,
         "author": "Michel Raynal",
         "total": 10,
         "recent": 0,
@@ -361,8 +370,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 41,
-        "rank": 33,
+        "num": 42,
+        "rank": 34,
         "author": "Michael K. Reiter",
         "total": 10,
         "recent": 2,
@@ -370,20 +379,11 @@
     },
     {
         "anchor": "ranking",
-        "num": 42,
-        "rank": 33,
+        "num": 43,
+        "rank": 34,
         "author": "Haining Wang",
         "total": 10,
-        "recent": 5,
-        "affiliation": ""
-    },
-    {
-        "anchor": "ranking",
-        "num": 43,
-        "rank": 33,
-        "author": "Evgenia Smirni",
-        "total": 10,
-        "recent": 2,
+        "recent": 3,
         "affiliation": ""
     },
     {
@@ -426,51 +426,78 @@
         "anchor": "ranking",
         "num": 48,
         "rank": 44,
-        "author": "Robbert van Renesse",
+        "author": "Kenneth P. Birman",
         "total": 9,
-        "recent": 4,
+        "recent": 2,
         "affiliation": "Cornell University, Ithaca, USA"
     },
     {
         "anchor": "ranking",
         "num": 49,
         "rank": 44,
-        "author": "Peng Liu 0005",
+        "author": "Robbert van Renesse",
         "total": 9,
-        "recent": 7,
-        "affiliation": "Pennsylvania State University, College of Information Sciences and Technology, University Park, PA, USA"
+        "recent": 0,
+        "affiliation": "Cornell University, Ithaca, USA"
     },
     {
         "anchor": "ranking",
         "num": 50,
         "rank": 44,
-        "author": "Boudewijn R. Haverkort",
+        "author": "Peng Liu 0005",
         "total": 9,
-        "recent": 1,
-        "affiliation": "Tilburg University, Tilburg, Netherlands"
+        "recent": 4,
+        "affiliation": "Pennsylvania State University, College of Information Sciences and Technology, University Park, PA, USA"
     },
     {
         "anchor": "ranking",
         "num": 51,
         "rank": 44,
-        "author": "Joost-Pieter Katoen",
+        "author": "Boudewijn R. Haverkort",
         "total": 9,
-        "recent": 3,
-        "affiliation": "RWTH Aachen University, Germany"
+        "recent": 0,
+        "affiliation": "Tilburg University, Tilburg, Netherlands"
     },
     {
         "anchor": "ranking",
         "num": 52,
         "rank": 44,
-        "author": "Patrick P. C. Lee",
+        "author": "Joost-Pieter Katoen",
         "total": 9,
-        "recent": 7,
-        "affiliation": ""
+        "recent": 2,
+        "affiliation": "RWTH Aachen University, Germany"
     },
     {
         "anchor": "ranking",
         "num": 53,
-        "rank": 53,
+        "rank": 44,
+        "author": "Pascal Felber",
+        "total": 9,
+        "recent": 7,
+        "affiliation": "University of Neuch\u00e2tel, Switzerland"
+    },
+    {
+        "anchor": "ranking",
+        "num": 54,
+        "rank": 44,
+        "author": "Domenico Cotroneo",
+        "total": 9,
+        "recent": 1,
+        "affiliation": "University of Naples Federico II, Italy"
+    },
+    {
+        "anchor": "ranking",
+        "num": 55,
+        "rank": 44,
+        "author": "Patrick P. C. Lee",
+        "total": 9,
+        "recent": 5,
+        "affiliation": ""
+    },
+    {
+        "anchor": "ranking",
+        "num": 56,
+        "rank": 56,
         "author": "Jean-Claude Laprie",
         "total": 8,
         "recent": 0,
@@ -478,8 +505,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 54,
-        "rank": 53,
+        "num": 57,
+        "rank": 56,
         "author": "Jacob A. Abraham",
         "total": 8,
         "recent": 0,
@@ -487,8 +514,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 55,
-        "rank": 53,
+        "num": 58,
+        "rank": 56,
         "author": "John P. Hayes",
         "total": 8,
         "recent": 0,
@@ -496,8 +523,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 56,
-        "rank": 53,
+        "num": 59,
+        "rank": 56,
         "author": "David Powell",
         "total": 8,
         "recent": 0,
@@ -505,8 +532,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 57,
-        "rank": 53,
+        "num": 60,
+        "rank": 56,
         "author": "G. Robert Redinbo",
         "total": 8,
         "recent": 0,
@@ -514,8 +541,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 58,
-        "rank": 53,
+        "num": 61,
+        "rank": 56,
         "author": "Ram Chillarege",
         "total": 8,
         "recent": 0,
@@ -523,8 +550,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 59,
-        "rank": 53,
+        "num": 62,
+        "rank": 56,
         "author": "Nirmal R. Saxena",
         "total": 8,
         "recent": 1,
@@ -532,8 +559,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 60,
-        "rank": 53,
+        "num": 63,
+        "rank": 56,
         "author": "Richard D. Schlichting",
         "total": 8,
         "recent": 0,
@@ -541,8 +568,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 61,
-        "rank": 53,
+        "num": 64,
+        "rank": 56,
         "author": "Jo\u00e3o Gabriel Silva",
         "total": 8,
         "recent": 0,
@@ -550,17 +577,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 62,
-        "rank": 53,
-        "author": "Kenneth P. Birman",
-        "total": 8,
-        "recent": 2,
-        "affiliation": "Cornell University, Ithaca, USA"
-    },
-    {
-        "anchor": "ranking",
-        "num": 63,
-        "rank": 53,
+        "num": 65,
+        "rank": 56,
         "author": "Christian Cachin",
         "total": 8,
         "recent": 1,
@@ -568,8 +586,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 64,
-        "rank": 53,
+        "num": 66,
+        "rank": 56,
         "author": "Matti A. Hiltunen",
         "total": 8,
         "recent": 0,
@@ -577,17 +595,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 65,
-        "rank": 53,
-        "author": "Pascal Felber",
-        "total": 8,
-        "recent": 6,
-        "affiliation": "University of Neuch\u00e2tel, Switzerland"
-    },
-    {
-        "anchor": "ranking",
-        "num": 66,
-        "rank": 53,
+        "num": 67,
+        "rank": 56,
         "author": "Sarita V. Adve",
         "total": 8,
         "recent": 2,
@@ -595,53 +604,71 @@
     },
     {
         "anchor": "ranking",
-        "num": 67,
-        "rank": 53,
+        "num": 68,
+        "rank": 56,
         "author": "Xiapu Luo",
         "total": 8,
-        "recent": 3,
+        "recent": 2,
         "affiliation": "The Hong Kong Polytechnic University"
     },
     {
         "anchor": "ranking",
-        "num": 68,
-        "rank": 53,
-        "author": "Marcello Cinque",
+        "num": 69,
+        "rank": 56,
+        "author": "Onur Mutlu",
         "total": 8,
         "recent": 3,
-        "affiliation": "University of Naples Federico II, Italy"
-    },
-    {
-        "anchor": "ranking",
-        "num": 69,
-        "rank": 53,
-        "author": "Domenico Cotroneo",
-        "total": 8,
-        "recent": 2,
-        "affiliation": "University of Naples Federico II, Italy"
+        "affiliation": "ETH Zurich"
     },
     {
         "anchor": "ranking",
         "num": 70,
-        "rank": 53,
-        "author": "Herbert Bos",
+        "rank": 56,
+        "author": "Marcello Cinque",
         "total": 8,
-        "recent": 5,
-        "affiliation": "Vrije Universiteit Amsterdam, The Netherlands"
+        "recent": 1,
+        "affiliation": "University of Naples Federico II, Italy"
     },
     {
         "anchor": "ranking",
         "num": 71,
-        "rank": 53,
-        "author": "Dongyan Xu",
+        "rank": 56,
+        "author": "Herbert Bos",
         "total": 8,
         "recent": 3,
-        "affiliation": ""
+        "affiliation": "Vrije Universiteit Amsterdam, The Netherlands"
     },
     {
         "anchor": "ranking",
         "num": 72,
-        "rank": 72,
+        "rank": 56,
+        "author": "Dongyan Xu",
+        "total": 8,
+        "recent": 1,
+        "affiliation": ""
+    },
+    {
+        "anchor": "ranking",
+        "num": 73,
+        "rank": 56,
+        "author": "Alysson Neves Bessani",
+        "total": 8,
+        "recent": 5,
+        "affiliation": ""
+    },
+    {
+        "anchor": "ranking",
+        "num": 74,
+        "rank": 56,
+        "author": "Saman A. Zonouz",
+        "total": 8,
+        "recent": 6,
+        "affiliation": ""
+    },
+    {
+        "anchor": "ranking",
+        "num": 75,
+        "rank": 75,
         "author": "Gregory F. Sullivan",
         "total": 7,
         "recent": 0,
@@ -649,8 +676,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 73,
-        "rank": 72,
+        "num": 76,
+        "rank": 75,
         "author": "Shantanu Dutt",
         "total": 7,
         "recent": 0,
@@ -658,8 +685,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 74,
-        "rank": 72,
+        "num": 77,
+        "rank": 75,
         "author": "Yves Crouzet",
         "total": 7,
         "recent": 0,
@@ -667,8 +694,17 @@
     },
     {
         "anchor": "ranking",
-        "num": 75,
-        "rank": 72,
+        "num": 78,
+        "rank": 75,
+        "author": "Rami G. Melhem",
+        "total": 7,
+        "recent": 3,
+        "affiliation": "University of Pittsburgh, Pennsylvania, USA"
+    },
+    {
+        "anchor": "ranking",
+        "num": 79,
+        "rank": 75,
         "author": "Farnam Jahanian",
         "total": 7,
         "recent": 0,
@@ -676,17 +712,17 @@
     },
     {
         "anchor": "ranking",
-        "num": 76,
-        "rank": 72,
+        "num": 80,
+        "rank": 75,
         "author": "Mohamed Ka\u00e2niche",
         "total": 7,
-        "recent": 2,
+        "recent": 1,
         "affiliation": "LAAS, Toulouse, France"
     },
     {
         "anchor": "ranking",
-        "num": 77,
-        "rank": 72,
+        "num": 81,
+        "rank": 75,
         "author": "Dong Tang",
         "total": 7,
         "recent": 0,
@@ -694,8 +730,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 78,
-        "rank": 72,
+        "num": 82,
+        "rank": 75,
         "author": "E. N. Elnozahy",
         "total": 7,
         "recent": 0,
@@ -703,8 +739,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 79,
-        "rank": 72,
+        "num": 83,
+        "rank": 75,
         "author": "Pradip Bose",
         "total": 7,
         "recent": 1,
@@ -712,17 +748,17 @@
     },
     {
         "anchor": "ranking",
-        "num": 80,
-        "rank": 72,
+        "num": 84,
+        "rank": 75,
         "author": "Anne-Marie Kermarrec",
         "total": 7,
-        "recent": 3,
+        "recent": 2,
         "affiliation": "INRIA, Rennes, France"
     },
     {
         "anchor": "ranking",
-        "num": 81,
-        "rank": 72,
+        "num": 85,
+        "rank": 75,
         "author": "Louise E. Moser",
         "total": 7,
         "recent": 0,
@@ -730,8 +766,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 82,
-        "rank": 72,
+        "num": 86,
+        "rank": 75,
         "author": "P. M. Melliar-Smith",
         "total": 7,
         "recent": 0,
@@ -739,8 +775,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 83,
-        "rank": 72,
+        "num": 87,
+        "rank": 75,
         "author": "Andrea Bondavalli",
         "total": 7,
         "recent": 1,
@@ -748,8 +784,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 84,
-        "rank": 72,
+        "num": 88,
+        "rank": 75,
         "author": "Peter Folkesson",
         "total": 7,
         "recent": 0,
@@ -757,8 +793,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 85,
-        "rank": 72,
+        "num": 89,
+        "rank": 75,
         "author": "Shivakant Mishra",
         "total": 7,
         "recent": 0,
@@ -766,17 +802,17 @@
     },
     {
         "anchor": "ranking",
-        "num": 86,
-        "rank": 72,
+        "num": 90,
+        "rank": 75,
         "author": "Julia L. Lawall",
         "total": 7,
-        "recent": 3,
+        "recent": 2,
         "affiliation": "LIP6, Paris"
     },
     {
         "anchor": "ranking",
-        "num": 87,
-        "rank": 72,
+        "num": 91,
+        "rank": 75,
         "author": "Kam S. Tso",
         "total": 7,
         "recent": 0,
@@ -784,17 +820,17 @@
     },
     {
         "anchor": "ranking",
-        "num": 88,
-        "rank": 72,
+        "num": 92,
+        "rank": 75,
         "author": "Peter Buchholz 0001",
         "total": 7,
-        "recent": 3,
+        "recent": 2,
         "affiliation": "Technical University of Dortmund, Germany"
     },
     {
         "anchor": "ranking",
-        "num": 89,
-        "rank": 72,
+        "num": 93,
+        "rank": 75,
         "author": "George Candea",
         "total": 7,
         "recent": 0,
@@ -802,8 +838,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 90,
-        "rank": 72,
+        "num": 94,
+        "rank": 75,
         "author": "Jos\u00e9 Pereira 0001",
         "total": 7,
         "recent": 1,
@@ -811,35 +847,35 @@
     },
     {
         "anchor": "ranking",
-        "num": 91,
-        "rank": 72,
-        "author": "Onur Mutlu",
+        "num": 95,
+        "rank": 75,
+        "author": "Daniel J. Sorin",
         "total": 7,
-        "recent": 6,
-        "affiliation": "ETH Zurich"
+        "recent": 3,
+        "affiliation": "Duke University, Durham, USA"
     },
     {
         "anchor": "ranking",
-        "num": 92,
-        "rank": 72,
-        "author": "Andrew S. Tanenbaum",
+        "num": 96,
+        "rank": 75,
+        "author": "Miguel Correia 0001",
         "total": 7,
         "recent": 3,
+        "affiliation": "University of Lisbon, Portugal"
+    },
+    {
+        "anchor": "ranking",
+        "num": 97,
+        "rank": 75,
+        "author": "Andrew S. Tanenbaum",
+        "total": 7,
+        "recent": 2,
         "affiliation": "VU University Amsterdam, Netherlands"
     },
     {
         "anchor": "ranking",
-        "num": 93,
-        "rank": 72,
-        "author": "Saman A. Zonouz",
-        "total": 7,
-        "recent": 5,
-        "affiliation": ""
-    },
-    {
-        "anchor": "ranking",
-        "num": 94,
-        "rank": 94,
+        "num": 98,
+        "rank": 98,
         "author": "John F. Meyer",
         "total": 6,
         "recent": 0,
@@ -847,8 +883,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 95,
-        "rank": 94,
+        "num": 99,
+        "rank": 98,
         "author": "Tohru Kikuno",
         "total": 6,
         "recent": 0,
@@ -856,8 +892,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 96,
-        "rank": 94,
+        "num": 100,
+        "rank": 98,
         "author": "Edward J. McCluskey",
         "total": 6,
         "recent": 0,
@@ -865,8 +901,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 97,
-        "rank": 94,
+        "num": 101,
+        "rank": 98,
         "author": "David A. Rennels",
         "total": 6,
         "recent": 0,
@@ -874,17 +910,17 @@
     },
     {
         "anchor": "ranking",
-        "num": 98,
-        "rank": 94,
+        "num": 102,
+        "rank": 98,
         "author": "Hans-Joachim Wunderlich",
         "total": 6,
-        "recent": 2,
+        "recent": 1,
         "affiliation": "University of Stuttgart, Germany"
     },
     {
         "anchor": "ranking",
-        "num": 99,
-        "rank": 94,
+        "num": 103,
+        "rank": 98,
         "author": "Jie Xu 0007",
         "total": 6,
         "recent": 0,
@@ -892,8 +928,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 100,
-        "rank": 94,
+        "num": 104,
+        "rank": 98,
         "author": "Niraj K. Jha",
         "total": 6,
         "recent": 0,
@@ -901,8 +937,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 101,
-        "rank": 94,
+        "num": 105,
+        "rank": 98,
         "author": "C. Mani Krishna",
         "total": 6,
         "recent": 0,
@@ -910,17 +946,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 102,
-        "rank": 94,
-        "author": "Rami G. Melhem",
-        "total": 6,
-        "recent": 2,
-        "affiliation": "University of Pittsburgh, Pennsylvania, USA"
-    },
-    {
-        "anchor": "ranking",
-        "num": 103,
-        "rank": 94,
+        "num": 106,
+        "rank": 98,
         "author": "Janak H. Patel",
         "total": 6,
         "recent": 0,
@@ -928,8 +955,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 104,
-        "rank": 94,
+        "num": 107,
+        "rank": 98,
         "author": "Nitin H. Vaidya",
         "total": 6,
         "recent": 0,
@@ -937,17 +964,17 @@
     },
     {
         "anchor": "ranking",
-        "num": 105,
-        "rank": 94,
+        "num": 108,
+        "rank": 98,
         "author": "Willy Zwaenepoel",
         "total": 6,
-        "recent": 2,
+        "recent": 1,
         "affiliation": "University of Sydney, NSW, Australia"
     },
     {
         "anchor": "ranking",
-        "num": 106,
-        "rank": 94,
+        "num": 109,
+        "rank": 98,
         "author": "Arif Merchant",
         "total": 6,
         "recent": 0,
@@ -955,8 +982,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 107,
-        "rank": 94,
+        "num": 110,
+        "rank": 98,
         "author": "Seyed Ghassem Miremadi",
         "total": 6,
         "recent": 0,
@@ -964,8 +991,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 108,
-        "rank": 94,
+        "num": 111,
+        "rank": 98,
         "author": "Achour Most\u00e9faoui",
         "total": 6,
         "recent": 0,
@@ -973,8 +1000,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 109,
-        "rank": 94,
+        "num": 112,
+        "rank": 98,
         "author": "Priya Narasimhan",
         "total": 6,
         "recent": 0,
@@ -982,8 +1009,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 110,
-        "rank": 94,
+        "num": 113,
+        "rank": 98,
         "author": "Jonny Vinter",
         "total": 6,
         "recent": 0,
@@ -991,8 +1018,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 111,
-        "rank": 94,
+        "num": 114,
+        "rank": 98,
         "author": "Patrick Th. Eugster",
         "total": 6,
         "recent": 0,
@@ -1000,8 +1027,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 112,
-        "rank": 94,
+        "num": 115,
+        "rank": 98,
         "author": "Juan-Carlos Ruiz-Garcia",
         "total": 6,
         "recent": 2,
@@ -1009,8 +1036,8 @@
     },
     {
         "anchor": "ranking",
-        "num": 113,
-        "rank": 94,
+        "num": 116,
+        "rank": 98,
         "author": "Lixia Zhang 0001",
         "total": 6,
         "recent": 0,
@@ -1018,56 +1045,47 @@
     },
     {
         "anchor": "ranking",
-        "num": 114,
-        "rank": 94,
-        "author": "Daniel J. Sorin",
-        "total": 6,
-        "recent": 2,
-        "affiliation": "Duke University, Durham, USA"
-    },
-    {
-        "anchor": "ranking",
-        "num": 115,
-        "rank": 94,
-        "author": "Miguel Correia 0001",
-        "total": 6,
-        "recent": 2,
-        "affiliation": "University of Lisbon, Portugal"
-    },
-    {
-        "anchor": "ranking",
-        "num": 116,
-        "rank": 94,
+        "num": 117,
+        "rank": 98,
         "author": "Xiangyu Zhang 0001",
         "total": 6,
-        "recent": 2,
+        "recent": 0,
         "affiliation": "Purdue University, West Lafayette, IN, USA"
     },
     {
         "anchor": "ranking",
-        "num": 117,
-        "rank": 94,
-        "author": "Alysson Neves Bessani",
-        "total": 6,
-        "recent": 4,
-        "affiliation": ""
-    },
-    {
-        "anchor": "ranking",
         "num": 118,
-        "rank": 94,
+        "rank": 98,
         "author": "Lydia Y. Chen",
         "total": 6,
-        "recent": 4,
+        "recent": 2,
         "affiliation": "IBM Research, Zurich, Switzerland"
     },
     {
         "anchor": "ranking",
         "num": 119,
-        "rank": 94,
+        "rank": 98,
+        "author": "Kun Sun 0001",
+        "total": 6,
+        "recent": 3,
+        "affiliation": "George Mason University, Department of Information Sciences and Technology, Fairfax, VA, USA"
+    },
+    {
+        "anchor": "ranking",
+        "num": 120,
+        "rank": 98,
+        "author": "Zhongshu Gu",
+        "total": 6,
+        "recent": 3,
+        "affiliation": ""
+    },
+    {
+        "anchor": "ranking",
+        "num": 121,
+        "rank": 98,
         "author": "Devesh Tiwari",
         "total": 6,
-        "recent": 6,
+        "recent": 4,
         "affiliation": ""
     }
 ]

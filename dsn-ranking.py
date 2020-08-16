@@ -1,14 +1,22 @@
+import re
 import os
 import dblp
 import json
 import time
+import datetime
 
 ## Constants
-OUTPUT_DIR = './output-new'               # Output directory
+OUTPUT_DIR = './output-new'           # Output directory
 MIN_PAGES = 3                         # Min pages for a paper
 MATCH = ['DSN', 'FTCS']               # Venues considered
-MATCH_DOI = ['DSN.{}', 'FTCS.{}']     # DOI considered (to filter out workshops)
+# DOI considered (to filter out workshops)
+MATCH_DOI = [
+    '10\.1109/DSN([0-9]+)\.{}\.([0-9]+)',
+    '10\.1109/ICDSN\.{}\.([0-9]+)',
+    '10\.1109/DSN\.{}\.([0-9]+)',
+    '10\.1109\/FTCS\.{}\.([0-9]+)']
 RECENT = 2014                         # Year for recent papers
+RECENT_YEARS = 5                      # Number years span used to consider a publication as 'recent'
 
 ## Global Variables
 authorList = {}
@@ -88,9 +96,14 @@ def filter_papers(pub, venue):
         # For some papers the doi is not available (e.g., https://dblp.uni-trier.de/rec/xml/conf/ftcs/HuangK93.xml)
         for doi in MATCH_DOI:
             try:
-                if doi.format(year) in pub["doi"]:
+                regex = r"%s" % doi.format(year)
+                match = re.search(regex, pub["doi"])
+                # print ("%s %s" % (regex, pub["doi"]))
+                if match != None:
+                # if doi.format(year) in pub["doi"]:
                     return True
             except:
+                # if the paper does not have a doi
                 return True
 
     return False
@@ -146,15 +159,26 @@ def main():
     if not usage():
         exit(1)
 
+    # Getting the year used to determine 'recent' publications
+    cyear = datetime.datetime.now().year
+    cyear = int(cyear) + 1
+    global RECENT
+    RECENT = cyear - RECENT_YEARS
+
+
+    print ('Last: {} | Recent papers since: {}'.format(cyear-1, RECENT))
+
     outFile = open(OUTPUT_DIR + '/dsnHOF-' + time.strftime("%Y%m%d-%H%M%S"), mode='a', encoding='utf-8')
 
     # FTCS (1988-1999)
+    print ('Processing FTCS (1988, 1999)')
     for year in range(1988,2000):
-        print("Processing year {}: {}".format(year, get_authors("conf/ftcs/{}".format(year))))
+        print(" * Processing year {}: {}".format(year, get_authors("conf/ftcs/{}".format(year))))
 
-    # DSN (2000-2019)
-    for year in range(2000,2020):
-        print("Processing year {}: {}".format(year, get_authors("conf/dsn/{}".format(year))))
+    # DSN (2000-now)
+    print ('Processing DSN (2000, %d)' % (cyear-1))
+    for year in range(2000,cyear):
+        print(" * Processing year {}: {}".format(year, get_authors("conf/dsn/{}".format(year))))
 
     for pid in authorList:
         author = authorList[pid]
