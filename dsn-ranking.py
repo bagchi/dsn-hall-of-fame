@@ -7,7 +7,7 @@ import datetime
 
 ## Constants
 OUTPUT_DIR = './output-new'           # Output directory
-MIN_PAGES = 3                         # Min pages for a paper
+MIN_PAGES = 4                         # Min pages for a paper
 MATCH = ['DSN', 'FTCS']               # Venues considered
 # DOI considered (to filter out workshops)
 MATCH_DOI = [
