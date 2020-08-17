@@ -8,12 +8,14 @@ This repo contains the scripts needed to run and calculate the number of publica
 About this Version
 ==============
 
-This script is based on ISCA Hall of Fame Python scripts. The script queries DBLP for the authors of accepted papers from DSN (2000-2019) and FTCS (1988-1999) Conferences. Then, the script counts the number of publications for each author. However, abstracts (posters), keynotes, workshop papers, industry tracks papers are not included in the final count. The count is kept in a list, `authorList`, which is then sorted by the number of publications. The script generates two outputs: 1) a CSV file with the author details including a key identifying each publication counted (dsnHoF-YYYYMMDD-HHMMSS.csv);2) a JSON file with the final ranking (ranking.json).
+This script is based on ISCA Hall of Fame Python scripts. The script queries DBLP for the authors of accepted papers from DSN (2000-Current) and FTCS (1988-1999) Conferences. Then, the script counts the number of publications for each author. However, abstracts (posters), keynotes, workshop papers, industry tracks papers are not included in the count. The count is kept in a list, `authorList`, which is then sorted by the number of publications. The script generates two outputs: 1) a CSV file with the author details including a key identifying each publication counted (dsnHoF-YYYYMMDD-HHMMSS.csv);2) a JSON file with the final ranking (ranking.json).
 
 Missing Features
 ================
 
-- This version does not have support for authors with the same/similar names ("homonyms"). In the current version of the script, the number of publications are tally up according to the name of the author registered on DBLP. The script does not attempt to merge the number of publications across people with the same/similar names. In some cases, this leads to under-counting, because certain authors have multiple DBLP pages that should be merged (certain authors also sometimes have duplicate DBLP pages where the counts are identical across each variation). However, since there are legitimate cases of different authors with the same/similar name, merging their counts has the effect of misidentifying their contributions.
+This version does not have support for authors with the same/similar names ("homonyms"). In the current version of the script, the number of publications are tally up according to the name of the author registered on DBLP. The script does not attempt to merge the number of publications across people with the same/similar names. In some cases, this leads to under-counting, because certain authors have multiple DBLP pages that should be merged (certain authors also sometimes have duplicate DBLP pages where the counts are identical across each variation). However, since there are legitimate cases of different authors with the same/similar name, merging their counts has the effect of misidentifying their contributions.
+
+The DBLP affiliations are incomplete and our affiliation field could be augmented with other sources, such as, faculty list at CSrankings.org.
 
 ---------------------------------------------------------------------------------
 
