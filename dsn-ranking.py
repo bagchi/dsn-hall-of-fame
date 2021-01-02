@@ -16,7 +16,7 @@ MATCH_DOI = [
     '10\.1109/DSN\.{}\.([0-9]+)',
     '10\.1109\/FTCS\.{}\.([0-9]+)']
 # RECENT = 2014                         # Year for recent papers --- change: no hard coding required, figured out from DBLP
-RECENT_YEARS = 5                      # Number years span used to consider a publication as 'recent'
+RECENT_YEARS = 6                      # Number years span used to consider a publication as 'recent'
 
 ## Global Variables
 authorList = {}
@@ -122,6 +122,12 @@ def get_authors(venue):
     results = dblp.search_pub(venue)
 
     hits = json.loads(results)["result"]["hits"]
+
+    # No hits for the `conf/dsn/{}".format(year)`
+    # Most probably either the venue prefix is wrong or there are not paper selected year for the current year
+    if "hit" not in hits:
+        return 0
+
     for i in hits["hit"]:
         info = i["info"]
         if  filter_papers(info, venue):
@@ -197,7 +203,7 @@ def main():
     data = []
     for key, value in sorted(authorList.items(), key=lambda x : x[1]['total'], reverse=True):
 
-        if i > 100 and last_total != value['total']:
+        if i > 90000 and last_total != value['total']:
             break
 
         if last_total != value['total']: rank = i
