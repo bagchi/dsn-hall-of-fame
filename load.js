@@ -13,7 +13,8 @@ function loadJSON(callback) {
 loadJSON(function(response) {
     var data = JSON.parse(response);
     var table = document.getElementById('rank');
-    for(var i=0; i<data.length; i++) {
+    var limit = (data.length > 100) ? 100 : data.length;
+    for(var i=0; i<limit; i++) {
 
         var row = table.insertRow(i+1)
         var c0 = row.insertCell(0);

@@ -15,16 +15,15 @@ MATCH_DOI = [
     '10\.1109/ICDSN\.{}\.([0-9]+)',
     '10\.1109/DSN\.{}\.([0-9]+)',
     '10\.1109\/FTCS\.{}\.([0-9]+)']
-# RECENT = 2014                         # Year for recent papers --- change: no hard coding required, figured out from DBLP
-RECENT_YEARS = 6                      # Number years span used to consider a publication as 'recent'
+# RECENT = 2014                        # Year for recent papers --- change: no hard coding required, figured out from DBLP
+RECENT_YEARS = 5                       # Number years span used to consider a publication as 'recent'
 
 ## Global Variables
 authorList = {}
 
 
 def get_recent_pubs(pubs):
-    """
-    Get the number of recent publications (using the `RECENT` constant as reference.
+    """Get the number of recent publications (using the `RECENT` constant as reference.
     Args:
         pubs: List of publications for the author.
 
@@ -44,8 +43,7 @@ def get_recent_pubs(pubs):
     return cc
 
 def update_authors(pid, name, key):
-    """
-    Update the author list (`authorList`)
+    """Update the author list (`authorList`)
     Args:
         pid: Identifier of the author.
         name: Name of the author
@@ -67,8 +65,7 @@ def update_authors(pid, name, key):
 
 
 def filter_papers(pub, venue):
-    """
-    Filter out papers from the count (e.g., Industrial Track, Workshop papers, etc)
+    """Filter out papers from the count (e.g., Industrial Track, Workshop papers, etc)
     Returns:
         True if the paper should be considered. False otherwise.
     """
@@ -109,8 +106,7 @@ def filter_papers(pub, venue):
     return False
 
 def get_authors(venue):
-    """
-    Save the author list (in `authorList`) who had accepted papers in the conference.
+    """Save the author list (in `authorList`) who had accepted papers in the conference.
     Args:
         venue: venue to search. The venue follows this format /conf/XXX/YYYY, where XXX is the abbrev of the conf and
         YYYY correspond to the year of the conf.
@@ -144,6 +140,8 @@ def get_authors(venue):
     return papers
 
 def usage():
+    """Print out script usage.
+    """
     if not os.path.isdir(OUTPUT_DIR):
         if OUTPUT_DIR[0:2] == './':
             dir = OUTPUT_DIR[2:]
@@ -156,9 +154,9 @@ def usage():
 
 
 def main():
-    """
-    Main Function
+    """Main Function
     Returns:
+        None
 
     """
 
@@ -207,7 +205,15 @@ def main():
             break
 
         if last_total != value['total']: rank = i
-        print ('{}\t{}\t{}\t{}\t{}\t{}'.format(i, rank, value['name'], value['total'], value['recent'], dblp.get_affiliation(key, value['name'])))
+        try:
+            affiliation = dblp.get_affiliation(key, value['name'])
+        except Exception as e:
+            affiliation = "Unknown"
+            print ('{} {}: affiliation not found. Error {}' % 
+                key, value['name'], e)
+
+        print(f"""{rank}\t{key}\t{value['name']}\t{value['total']}\t{value['recent']}\t{affiliation}""")
+        # print ('{}\t{}\t{}\t{}\t{}\t{}\t{}'.format(i, rank, key, value['name'], value['total'], value['recent'], affiliation))
         data.append({
             "anchor": "ranking",
             "num": i,
@@ -215,7 +221,7 @@ def main():
             "author": value['name'],
             'total': value['total'],
             'recent': value['recent'],
-            'affiliation': dblp.get_affiliation(key, value['name'])
+            'affiliation': affiliation
         })
 
         i+=1
@@ -226,14 +232,22 @@ def main():
 
 
 def test():
+    xx = [
+        {'ikey': "i/RavishankarKIyer", 'name': "Ravishankar K. Iyer"},
+        {'ikey': "33/2879", 'name': "Henrique Madeira"}
+    ]
     # xx = dblp.get_affiliation("i/RavishankarKIyer", "Ravishankar K. Iyer")
     # xx = dblp.get_affiliation("k/PhilipKoopman", "Philip J. Koopman Jr.")
     # xx = dblp.get_affiliation("50/842","Daniel P. Siewiorek")
     # xx = dblp.get_affiliation("l/MichaelRLyu", "Michael R. Lyu")
-    xx = dblp.get_affiliation("k/JoostPieterKatoen", "Joost-Pieter Katoen")
-    print(xx)
+    # xx = dblp.get_affiliation("k/JoostPieterKatoen", "Joost-Pieter Katoen")
+    # xx = dblp.get_affiliation("33/2879", "Henrique Madeira")
+    
+    for entry in xx:
+        print(entry)
+        print(f"{entry['ikey']}, {entry['name']}: {dblp.get_affiliation(entry['ikey'], entry['name'])}")
 
 
 if __name__ == '__main__':
-    main()
-    # test()
+    # main()
+    test()

@@ -2,57 +2,78 @@
 <html>
 	<head>
 	<title>DSN Hall of Fame</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		table {
 			border: 0pt solid black;
 			cellpadding: 0;
 		}
-		table td, table th {
-			border: 0.5px solid black;
-		}
-		.numerl {
-			text-align: left;
-		}
-		.numer2 {
-			text-align: right;
-		}
-		.numer3 {
-			text-align: center;
-		}
+		table th {border: 0.5px solid black;}
+		table td {border: 0.5px solid black;}
+		.numerl {text-align: left;}
+		.numer2 {text-align: right;}
+		.numer3 {text-align: center;}
+		body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</style>
 	</head>
-	<body>
-	  <H3> This is a ranking by the number of papers published by authors in DSN and its predecessor conference FTCS. The data is obtained from DBLP. The records go only as far back as 1988, though the conference started in 1971. The recency count is for papers published in the last five years. </H3>
-	  
-<script type="text/javascript">
-function getLastMod(){
-var myFrm = document.getElementById('myIframe');
-var lastModif = new Date(myFrm.contentWindow.document.lastModified).getFullYear();
-document.getElementById('LastModified').innerHTML = "Last Update: " + lastModif.toString();
-}
-</script>
 
-<H3><span id="LastModified"></span></H3> 
+	<body class="w3-light-grey w3-content" style="max-width:1600px">
 
+		<script type="text/javascript">
+			function getLastMod(){
+				var myFrm = document.getElementById('myIframe');
+				var lastModif = new Date(myFrm.contentWindow.document.lastModified).getFullYear();
+				document.getElementById('LastModified').innerHTML = "Last Update: " + lastModif.toString();
+			}
+		</script>
 
-<iframe id="myIframe" onload="getLastMod()" src="ranking.json" style="display:none;">
-</iframe>
+		<!-- Header -->
+		<header>
+			<div class="w3-container w3-padding-large">
+				<h1 class=w3-text-indigo><b>DSN Hall of Fame</b></h1>
+				<h3><b>This is a ranking by the number of papers published by authors in DSN and its predecessor conference FTCS. The data is obtained from DBLP. The records go only as far back as 1988, though the conference started in 1971. The recency count is for papers published in the last five years.</b></h3>
+				<h3 class=w3-text-indigo><span id="LastModified"></h3>
+			</div>
+		</header>
 
-	  Source code, written by Edgardo Barsallo and Saurabh Bagchi, available at: https://github.com/bagchi/dsn-hall-of-fame, derived from the scholrly's dblp-python code. <p> Fine-print: (1) Count does not equal impact. (2) Only regular papers are counted, not workshop, industry track, short papers, etc. (3) Affiliation information comes from DBLP.
+		<!-- Description -->
+		<div class="w3-container w3-padding-large">
+			<p>
+			Source code, written by Edgardo Barsallo and Saurabh Bagchi, available at: <a href=https://github.com/bagchi/dsn-hall-of-fame>https://github.com/bagchi/dsn-hall-of-fame</a>, derived from the <a href="https://github.com/scholrly/dblp-python">scholrly's dblp-python code</a>.
+			</p> 
+			  
+			<p> 
+			Fine-print: (1) Count does not equal impact. (2) Only regular papers are counted, not workshop, industry track, short papers, etc. (3) Affiliation information comes from DBLP.
+			</p>
+		</div>
 
-		<table id="rank">
-			<tr>
-				<td><b>Author</b></td>
-				<td><b># Rank</b></td>
-				<td><b>Name</b></td>
-				<td><b>Num. of Papers</b></td>
-				<td><b>Num. of Recent Papers</b></td>
-				<td><b>Last-Known Affiliation</b></td>
-			</tr>
-		</table>
+		<!-- Ranking Table -->
+		<div class="w3-container w3-padding-large" style="margin-bottom:32px">
+			<table class="w3-table-all" id="rank">
+				<tr>
+					<th><b>Author</b></th>
+					<th><b># Rank</b></th>
+					<th><b>Name</b></th>
+					<th><b>Num. of Papers</b></th>
+					<th><b>Num. of Recent Papers</b></th>
+					<th><b>Last-Known Affiliation</b></th>
+				</tr>
+			</table>
+	
+				<ul id="ranking"></ul>
+		</div>
 
-			<ul id="ranking"></ul>
+		<!-- Footer -->
+		<footer class="w3-container w3-padding-32 w3-grey">
+		</footer>
+			
+		<div class="w3-black w3-center w3-padding-24" id="acknowledgments">
+			Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
+		</div>
 
+		<iframe id="myIframe" onload="getLastMod()" src="ranking.json" style="display:none;"> </iframe>
 		<script type="text/javascript" src=load.js></script>
 	</body>
 </html>

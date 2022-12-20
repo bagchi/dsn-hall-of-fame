@@ -39,3 +39,5 @@ nosetests.xml
 
 # IDEA
 .idea
+env
+venv
