@@ -23,9 +23,11 @@
 
 		<script type="text/javascript">
 			function getLastMod(){
+				const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 				var myFrm = document.getElementById('myIframe');
-				var lastModif = new Date(myFrm.contentWindow.document.lastModified).getFullYear();
-				document.getElementById('LastModified').innerHTML = "Last Update: " + lastModif.toString();
+				var lastModifYear = new Date(myFrm.contentWindow.document.lastModified).getFullYear();
+				var lastModifMonth = new Date(myFrm.contentWindow.document.lastModified).getMonth();
+				document.getElementById('LastModified').innerHTML = "Last Update: " + month[lastModifMonth] + " " + lastModifYear.toString();
 			}
 		</script>
 
