@@ -8,6 +8,8 @@ import time
 import datetime
 import pickle
 
+from pub_years import get_pub_year, get_year_breakdown
+
 ## Constants
 OUTPUT_DIR = './output'               # Output directory
 MIN_PAGES = 4                         # Min pages for a paper
@@ -35,15 +37,10 @@ def get_recent_pubs(pubs):
     """
     cc = 0
     for key in pubs:
-        # in case the year has a suffix (e.g., LeeL17a)
-        try:
-            yyy = int(key[len(key) - 2:])
-        except:
-            yyy = int(key[len(key) - 3:len(key) - 1])
-        yyy = yyy + 1900 if yyy > 50 else yyy + 2000
-        if yyy >= RECENT:
+        if get_pub_year(key) >= RECENT:
             cc += 1
     return cc
+
 
 def update_authors(pid, name, key):
     """Update the author list (`authorList`)
@@ -228,7 +225,8 @@ def main():
     for pid in authorList:
         author = authorList[pid]
         author['total'] = len (author["pubs"])
-        author['recent'] = get_recent_pubs(author["pubs"])
+        author['years'] = get_year_breakdown(author["pubs"])
+        author['recent'] = sum(count for year, count in author['years'].items() if int(year) >= RECENT)
         authorList[pid] = author
 
         outFile.write("{}\t{}\t{}\t{}\n".format(author["name"], author["total"], author["recent"], author["pubs"]))
@@ -268,7 +266,8 @@ def main():
             "author": value['name'],
             'total': value['total'],
             'recent': value['recent'],
-            'affiliation': affiliation
+            'affiliation': affiliation,
+            'years': value['years']
         })
 
         i+=1
